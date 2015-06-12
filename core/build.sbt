@@ -9,7 +9,10 @@ scalaVersion := "2.11.6"
 libraryDependencies ++= Seq(
   javaJdbc,
   cache,
-  javaWs
+  javaWs,
+  "com.rabbitmq" % "amqp-client" % "2.8.1",
+   rabbitmq 0.0.5,
+  jobs
 )
 
 libraryDependencies += "mysql" % "mysql-connector-java" % "5.1.18"
