@@ -4,7 +4,8 @@
 
 # Home page
 GET     /                           controllers.Application.index()
-GET		/orders				controllers.Application.getOrders(page: Int)
+GET		/orders	    				controllers.Application.getOrders(page: Int)
+GET		/order/:id 					controllers.Application.show(id: Long)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

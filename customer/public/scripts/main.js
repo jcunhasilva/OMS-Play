@@ -39,7 +39,9 @@ var OrderNS = (function () {
                 		hasOrders = true;
                 		$('.table tbody').empty();
                 		for(var i = 0; i < response.length; i++){
-                			$('.table tbody').append('<tr><th scope="row">1</th><td>'+response[i]['orderNr']+'</td><td>'+response[i]['productName']+'</td><td>'+response[i]['createdAt']+'</td></tr>');
+                			$('.table tbody').append('<tr><th scope="row">1</th><td>' + 
+                			'<a href="/order/'+ response[i]['orderId'] +'">' + response[i]['orderNr'] + '</a>' 
+                			+ '</td><td>'+response[i]['productName']+'</td><td>'+response[i]['createdAt']+'</td></tr>');
                 		}
                 	} else {
                 		hasOrders = false;
