@@ -1,7 +1,38 @@
 @(message: String)
 
-@main("Welcome to Play") {
+@main("OMS - Play") {
 
-    @play20.welcome(message, style = "Java")
+    <div class="panel panel-default">
+	  <!-- Default panel contents -->
+	  <div class="panel-heading">Orders list</div>
+	
+	  <!-- Table -->
+	  <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Order Nr</th>
+            <th>Product Name</th>
+            <th>Created At</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>loading...</td>
+          </tr>
+        </tbody>
+      </table>
+	</div>
+	
+	<nav>
+	  <ul class="pager">
+	    <li><a class="prev" href="javascript:void(0)">Previous</a></li>
+	    <li><a class="next" href="javascript:void(0)">Next</a></li>
+	  </ul>
+	</nav>
+
+	<script>
+		OrderNS.init();
+	</script>
 
 }
