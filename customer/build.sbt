@@ -1,6 +1,10 @@
-name := """customer"""
+name := "customer"
 
-version := "1.0-SNAPSHOT"
+version := "1.0"
+
+organization := "com.portotechcenter.oms"
+
+//resolvers += Resolver.file("Local repo", "/home/joseasilva/.ivy2/local"))(Resolver.ivyStylePatterns)
 
 lazy val root = (project in file(".")).enablePlugins(PlayJava)
 
@@ -19,8 +23,12 @@ libraryDependencies += "org.webjars" % "bootstrap" % "3.3.4"
 // other, legacy style, accesses its actions statically.
 routesGenerator := InjectedRoutesGenerator
 
+// sub-project this depends on
+val coreModule = RootProject(file("../core"))
+
 lazy val myProject = (project in file("."))
   .enablePlugins(PlayJava, PlayEbean)
+  .dependsOn(coreModule)
 
 EclipseKeys.projectFlavor := EclipseProjectFlavor.Java           // Java project. Don't expect Scala IDE
 EclipseKeys.createSrc := EclipseCreateSrc.ValueSet(EclipseCreateSrc.ManagedClasses, EclipseCreateSrc.ManagedResources)  // Use .class files instead of generated .scala files for views and routes 

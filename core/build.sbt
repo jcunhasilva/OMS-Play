@@ -1,6 +1,8 @@
-name := """core"""
+name := "Core"
 
-version := "1.0-SNAPSHOT"
+version := "1.0"
+
+organization := "com.portotechcenter.oms"
 
 lazy val root = (project in file(".")).enablePlugins(PlayJava)
 
