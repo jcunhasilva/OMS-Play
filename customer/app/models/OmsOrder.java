@@ -4,6 +4,8 @@ import java.util.Date;
 
 import javax.persistence.*;
 
+import org.joda.time.DateTime;
+
 import play.db.ebean.*;
 import play.data.*;
 import play.data.format.*;
@@ -11,7 +13,7 @@ import play.data.validation.*;
 
 
 @Entity
-public class Order extends Model {
+public class OmsOrder extends Model {
 	
 	@Id
 	public Long orderId;
@@ -22,11 +24,10 @@ public class Order extends Model {
 	@Constraints.Required
 	public String productName;
 	
-	@Formats.DateTime(pattern="dd/MM/yyyy")
-	public Date createdAt = new Date();
+	public String createdAt;
 	
-	public static Finder<Long,Order> find = new Finder<Long, Order>(
-      Long.class, Order.class
+	public static Finder<Long,OmsOrder> find = new Finder<Long, OmsOrder>(
+      Long.class, OmsOrder.class
 	);
 
 }
